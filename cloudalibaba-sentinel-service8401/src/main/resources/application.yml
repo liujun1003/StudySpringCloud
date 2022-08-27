@@ -1,0 +1,33 @@
+server:
+  port: 8401
+
+spring:
+  application:
+    name: cloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+      web-context-unify: false
+      datasource:
+        ds:
+          nacos:
+            server-addr: 127.0.0.1:8848
+            username: nacos
+            password: nacos
+            data-id: ${spring.application.name}
+            data-type: json
+            groupId: DEFAULT_GROUP
+            namespace: 65a4b6f5-1716-40e6-9f54-114b9dc91475
+            rule-type: flow
+
+
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

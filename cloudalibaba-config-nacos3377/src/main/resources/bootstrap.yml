@@ -1,0 +1,17 @@
+server:
+  port: 3377
+
+spring:
+  application:
+    name: cloudalibaba-config-nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.40.128:2222
+      config:
+        server-addr: 192.168.40.128:2222
+        file-extension: yaml
+#        group: DEV_GROUP
+#        namespace: d060623c-d199-4afd-a618-bb68109cee79
+
+# ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
